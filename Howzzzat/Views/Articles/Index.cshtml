@@ -1,0 +1,12 @@
+﻿@using Howzzzat.Models;
+@model IEnumerable<Article>
+
+@section featured{
+    <div><h2>Todays Articles are booring!</h2></div>
+}
+
+
+@foreach (var item in Model) {
+    @Html.Partial("_ArticleSummary", item)
+}
+

@@ -1,0 +1,19 @@
+﻿@using Howzzzat.Models;
+@model IEnumerable<Howzzzat.Models.LiveScore>
+
+
+
+
+@{
+    ViewBag.Title = "List";
+
+        
+}
+
+@foreach (var item in Model)
+{
+    <div>@item.MatchName</div>
+    <div>@item.CurrentScore</div>
+    <hr />
+}
+

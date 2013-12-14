@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/bootstrap")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div>
+        
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                @*<img src="~/Content/Images/logo.jpg" style="width: 150px" />*@
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+                    @Html.MenuLink("Home", "Index", "Home")
+                    @Html.MenuLink("Blogs", "Index", "Articles")
+                    @Html.MenuLink("Scores", "Index", "LiveScores")
+                </ul>
+            </div>
+        </nav>
+       
+
+        <div class="container-fluid page-host">
+            <div class="row-fluid">
+                <div class="span9">@RenderBody()</div>
+                <div class="span3">@Html.Action("Index", "LiveScores")</div>
+            </div>
+        </div>
+    </div>
+     <div><h3>Featured</h3></div>
+        <div>@RenderSection("featured", false)</div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

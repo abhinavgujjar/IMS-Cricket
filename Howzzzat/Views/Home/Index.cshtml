@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<h3>@ViewBag.Description</h3>
+
+@section featured{
+    @Html.Action("Index", "LiveScores")
+    <div><h2> NO LIVE MATCHES TONIGHT!</h2></div>
+}
+
+@for (int i = 0; i <= 10; i++ )
+{
+    <div>@(i * 10)</div>
+    
+    <span>This is the value of i = @i</span>
+}
+@{
+    var direct = 8;
+  
+  }
