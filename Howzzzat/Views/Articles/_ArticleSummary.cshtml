@@ -12,11 +12,11 @@
                 <div>
                     <h4>@Model.Title</h4>
                 </div>
-                <div>@Model.Content.Substring(0, 300)</div>
+                <div>@Html.Raw(Model.Content.Substring(0, 300))</div>
 
             </div>
-            <div>
+            @*<div>
                 @Html.Partial("_ArticlesStats", Model.Stat)
-            </div>
+            </div>*@
         </div>
     </div>

@@ -35,9 +35,7 @@ namespace Howzzzat.Migrations
                     Title = "Why Mitchell Johnson fails the hipster test",
                     Content = @"At its heart, the whole point of hipsters is not about being counter-culture, but rather laying claim to authenticity. You can't be a hipster if you jumped on a bandwagon or showed up without appreciating what you were there for. A hipster is authentic because an authentic experience means being there before it was cool and marketed. Consequently, while the rest of the world treats fast bowling as a seasonal fad, for Pakistanis it is more like l'bowling rapide pour l'bowling rapide.
 
-As soon as I decided that I belonged to this ridiculous category, I realised I would need some codes to define what kinds of things fast-bowling hipsters, at least the ones from the Pakistani school of thought, would look for. The first person I turned to for inspiration was Osman Samiuddin, the high priest of the Pakistani fast-bowling cult.",
-                    DatePublished = DateTime.Now,
-                    Stat = new ArticleStats()
+As soon as I decided that I belonged to this ridiculous category, I realised I would need some codes to define what kinds of things fast-bowling hipsters, at least the ones from the Pakistani school of thought, would look for. The first person I turned to for inspiration was Osman Samiuddin, the high priest of the Pakistani fast-bowling cult."
                 },
                 new Article
                 {
@@ -51,9 +49,7 @@ In this case they have spiralled into two of the more abject England Test perfor
 
 On the last Ashes tour, England had seemed like they were batting on cruise control. Arm out of the window, radio on, no worries mate, we'll get these runs at our own pace. This time round, against Australia's resurgent pace attack, England have found every gear but the right one. Either letting the game drift by as they try to duck out of the way of the coming onslaught, or overcompensating by providing catching practice in the outer. Collectively, they simply haven't played the short ball well enough.
 
-This isn't the first time England's batting has been in crisis since Flower has been coach. At the start of 2012 he presided over a 3-0 series thrashing by Pakistan in the UAE. No one scored a century. No one looked like they could. Saeed Ajmal and Abdur Rehman ripped the ball past the edge of English bats time and again. Whenever England faced them it felt like you were watching a cop clinging to the bonnet of a speeding getaway car.",
-                    DatePublished = DateTime.Now,
-                    Stat = new ArticleStats()
+This isn't the first time England's batting has been in crisis since Flower has been coach. At the start of 2012 he presided over a 3-0 series thrashing by Pakistan in the UAE. No one scored a century. No one looked like they could. Saeed Ajmal and Abdur Rehman ripped the ball past the edge of English bats time and again. Whenever England faced them it felt like you were watching a cop clinging to the bonnet of a speeding getaway car."
                 },
                 new Article
                 {
@@ -65,9 +61,7 @@ The brutality that Close confronted at Old Trafford is only hinted at on film an
 
 On a decaying wicket it was both awesome and terrible in its ferocity, and the batsmen displayed sporting courage of the highest kind. Close survived 108 balls and almost three hours, at one point facing Holding for more than 40 minutes without a change of ends. He refused to be broken by the onslaught, or by the hopeless situation of the match - England had been bowled out for 71 in their first innings, with Woolmer and Hayes dismissed by balls that Wisden records as unplayable and Greig and Underwood having narrow escapes from what could have been serious injury. They were 552 behind when Close and Edrich went in for a second time. It was heroic in its way, defiant and brave and doomed, and it's hard not to be moved by the sight of it.
 
-Mike Selvey sensed that Cook's England were facing pace that echoed a previous era, in a brilliant piece for the Guardian about Greg Chappell's method during the Packer years.",
-                    DatePublished = DateTime.Now,
-                    Stat = new ArticleStats()
+Mike Selvey sensed that Cook's England were facing pace that echoed a previous era, in a brilliant piece for the Guardian about Greg Chappell's method during the Packer years."
                 },
                 new Article
                 {
@@ -79,9 +73,7 @@ The old blokes nearby regaled us with the controversial story of the slicing and
 
 The news of Nelson Mandela's death reverberated around the ground. The minute's silence after lunch was a nice touch from NZ Cricket, and the respectful hush for Madiba was only punctured by a little kid who had a few questions for his mum.
 
-In the crowd there was an eclectic mix of families, a chap who looked like Bruce Dickinson from Iron Maiden, talented school kids with cricket bats, a guy with an umbrella taped to his back, and hardcore fans in fold-out deckchairs. It was nice to see a pleasing smattering of men in beige, but my player of the day was the old chap who was not partaking in the free sunscreen being dispensed willy-nilly around the ground. Instead he elected to fold a mini paper dart and held it on the bridge of his nose with his spectacles like it was the most normal thing ever.",
-                    DatePublished = DateTime.Now,
-                    Stat = new ArticleStats()
+In the crowd there was an eclectic mix of families, a chap who looked like Bruce Dickinson from Iron Maiden, talented school kids with cricket bats, a guy with an umbrella taped to his back, and hardcore fans in fold-out deckchairs. It was nice to see a pleasing smattering of men in beige, but my player of the day was the old chap who was not partaking in the free sunscreen being dispensed willy-nilly around the ground. Instead he elected to fold a mini paper dart and held it on the bridge of his nose with his spectacles like it was the most normal thing ever."
                 },
                 new Article
                 {
@@ -93,17 +85,13 @@ That is the way it goes. Because Sachin has been worshipped as a demi-god for th
 
 There are parallels between the two careers, perhaps. It was Sachin's brilliance at such a young age that initially caught the attention of the cricketing world. His international debut at age 16, against Pakistan in Karachi, is the stuff of legend. And if young brilliance is what excites cricket fans, Colvin's 2005 debut should get a mention too - less well-known, but no less remarkable for all that. Rumour has it that she was drafted into the England side at the last minute, by virtue of turning up to help out at a net session. England were playing Australia; Colvin took three wickets in her first Test match, and narrowly missed out on a hat-trick. England drew the match, and went on to win the Ashes for the first time in 42 years. She was only 15 at the time.
 
-Sachin has been the cornerstone of the most successful period of Indian cricket of all time. Colvin, too, has been a cornerstone of possibly the most successful England women's team ever, a side that in 2009 won the Ashes, the World Twenty20 and the 50-over World Cup in the course of just five months. Both players have consistently been at the top or near the top of the ICC's player rankings in their respective arts.",
-                    DatePublished = DateTime.Now,
-                    Stat = new ArticleStats()
+Sachin has been the cornerstone of the most successful period of Indian cricket of all time. Colvin, too, has been a cornerstone of possibly the most successful England women's team ever, a side that in 2009 won the Ashes, the World Twenty20 and the 50-over World Cup in the course of just five months. Both players have consistently been at the top or near the top of the ICC's player rankings in their respective arts."
                 },
                 new Article
                 {
                     Author = "NICHOLAS HOGG",
                     Title = "The comeback",
-                    Content = @"So can England 2013 muster and regroup? In the fabled 2005 series they came back from a first-game defeat at Lord's with a stirring victory at Edgbaston. The team was packed to the rafters with fighting tyros - Flintoff, Jones, Harmison and Hoggard, along with wheelie bin Ashley Giles engineering his comeback against the press jibes that he wasn't up to international standards. Giles may have only bagged three wickets in the first innings, but those scalps were Ponting, Clarke and Warne. Whilst the current squad as a whole must rearm - the testing No. 3 spot will surely be filled by either Root or Bell - cricket is a team game fought man to man. The fightback is ultimately up to individuals. Each batsman must stare down his bowling foe, as each bowler must hunt down his wicket. In cricket, unlike many other team sports, one player can win a game single-handedly.Arguably, one of the greatest ever Test comebacks must be India versus Australia in Kolkata in 2001, when a fine Steve Waugh century was diminished by a mighty 281 by VVS Laxman - ably partnered by a plucky 180 by Rahul Dravid - inspiring Harbhajan Singh to match-winning figures of 6 for 73 and the most unlikely Indian victory. Laxman, though supported by his rallied troops, won the game. As did Botham at Headingley in 1981. True, he needed Willis to gallop down the slope and kick away the Aussie stumps, but the bloodlust had been spiked by the Botham bravura.",
-                    DatePublished = DateTime.Now,
-                    Stat = new ArticleStats()
+                    Content = @"So can England 2013 muster and regroup? In the fabled 2005 series they came back from a first-game defeat at Lord's with a stirring victory at Edgbaston. The team was packed to the rafters with fighting tyros - Flintoff, Jones, Harmison and Hoggard, along with wheelie bin Ashley Giles engineering his comeback against the press jibes that he wasn't up to international standards. Giles may have only bagged three wickets in the first innings, but those scalps were Ponting, Clarke and Warne. Whilst the current squad as a whole must rearm - the testing No. 3 spot will surely be filled by either Root or Bell - cricket is a team game fought man to man. The fightback is ultimately up to individuals. Each batsman must stare down his bowling foe, as each bowler must hunt down his wicket. In cricket, unlike many other team sports, one player can win a game single-handedly.Arguably, one of the greatest ever Test comebacks must be India versus Australia in Kolkata in 2001, when a fine Steve Waugh century was diminished by a mighty 281 by VVS Laxman - ably partnered by a plucky 180 by Rahul Dravid - inspiring Harbhajan Singh to match-winning figures of 6 for 73 and the most unlikely Indian victory. Laxman, though supported by his rallied troops, won the game. As did Botham at Headingley in 1981. True, he needed Willis to gallop down the slope and kick away the Aussie stumps, but the bloodlust had been spiked by the Botham bravura."
                 }
                 );
         }

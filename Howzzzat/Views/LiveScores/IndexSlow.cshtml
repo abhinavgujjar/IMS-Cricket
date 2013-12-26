@@ -1,0 +1,23 @@
+﻿@using Howzzzat.Models;
+@model Howzzzat.Models.LiveScoreWrapper
+
+
+
+
+@{
+    ViewBag.Title = "List";
+
+        
+}
+
+@foreach (var message in Model.Messages)
+{
+    <div>@message</div>
+}
+<hr />
+@foreach (var item in Model.Scores)
+{
+    <div>@item.CurrentScore</div>
+    <div>@item.ExternalData</div>
+}
+

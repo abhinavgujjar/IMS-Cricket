@@ -1,36 +1,34 @@
-﻿using Howzzzat.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Howzzzat.Models;
 
 namespace Howzzzat.Controllers
 {
+    [Log]
     public class ArticlesController : Controller
     {
-        //
-        // GET: /Articles/
-
-        public ActionResult Dummy()
+        ILogger _logger;
+        public ArticlesController(ILogger logger)
         {
-            var article = new Article()
-            {
-                Title = "This is a dummy article",
-                Content = " Fummy contentFummy contentFummy contentFummy contentFummy contentFummy contentFummy contentFummy contentFummy contentFummy contentFummy contentFummy contentFummy contentFummy contentFummy contentFummy contentFummy contentFummy contentFummy contentFummy contentFummy contentFummy contentFummy contentFummy contentFummy contentFummy contentFummy contentFummy contentFummy content"
-            };
-
-            return View(new List<Article>(){article});
+            _logger = logger;
         }
 
-        public ActionResult Index()
-        {
-            HowzatContext context = new HowzatContext();
-            var articles = context.Articles.ToList();
+        private HowzatContext db = new HowzatContext();
 
-            foreach (var article in articles)
+        //
+        // GET: /Articles/
+        public ActionResult Index(string searchTerm)
+        {
+            var articles = db.Articles.Where(c => (searchTerm == null) || c.Content.Contains(searchTerm)).ToList();
+
+            if (Request.IsAjaxRequest())
             {
-                article.Stat = new ArticleStats { FbLikes = 100, gPlusShares = 78, twitterFavs = 44 };
+                return PartialView("_ArticleList", articles);
             }
 
             return View(articles);
@@ -38,10 +36,15 @@ namespace Howzzzat.Controllers
 
         //
         // GET: /Articles/Details/5
-
-        public ActionResult Details(int id)
+        public ActionResult Details(int id = 0)
         {
-            return View();
+            Article article = db.Articles.Find(id);
+            if (article == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(article);
         }
 
         //
@@ -56,70 +59,79 @@ namespace Howzzzat.Controllers
         // POST: /Articles/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Article article)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
-
+                db.Articles.Add(article);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(article);
         }
 
         //
         // GET: /Articles/Edit/5
 
-        public ActionResult Edit(int id)
+
+        public ActionResult Edit(int id = 0)
         {
-            return View();
+            Article article = db.Articles.Find(id);
+            if (article == null)
+            {
+                return HttpNotFound();
+            }
+            return View(article);
         }
 
         //
         // POST: /Articles/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Article article)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
-
+                db.Entry(article).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(article);
         }
 
         //
         // GET: /Articles/Delete/5
 
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int id = 0)
         {
-            return View();
+            Article article = db.Articles.Find(id);
+            if (article == null)
+            {
+                return HttpNotFound();
+            }
+            return View(article);
         }
 
         //
         // POST: /Articles/Delete/5
 
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
         {
-            try
-            {
-                // TODO: Add delete logic here
+            Article article = db.Articles.Find(id);
+            db.Articles.Remove(article);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+        protected override void Dispose(bool disposing)
+        {
+            db.Dispose();
+            base.Dispose(disposing);
         }
     }
 }

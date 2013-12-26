@@ -14,6 +14,12 @@ namespace Howzzzat
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Hello",
+                url: "Hello",
+                defaults: new { controller = "Hello", action = "SayHello"}
+            );
+            
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

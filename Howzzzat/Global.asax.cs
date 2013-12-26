@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Howzzzat.Controllers;
+using Howzzzat.Infra;
+using StructureMap;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -22,6 +25,13 @@ namespace Howzzzat
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            ControllerBuilder.Current.SetControllerFactory(new CustomControllerFactory());
+
+            ObjectFactory.Configure(x =>
+                x.For<ILogger>().Use<SqlServerLogger>());
+
+
         }
     }
 }

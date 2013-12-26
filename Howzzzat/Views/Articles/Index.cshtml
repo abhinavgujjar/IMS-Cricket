@@ -2,11 +2,19 @@
 @model IEnumerable<Article>
 
 @section featured{
-    <div><h2>Todays Articles are booring!</h2></div>
+    <div>
+        <h2>Todays Articles are booring!</h2>
+    </div>
 }
 
-
-@foreach (var item in Model) {
-    @Html.Partial("_ArticleSummary", item)
+@using (Ajax.BeginForm("Index", "Articles", new AjaxOptions() { HttpMethod = "Get", UpdateTargetId = "resultsHolder", InsertionMode = InsertionMode.Replace }))
+{
+    <input name="searchTerm" />
+    <input type="submit" value="Search Content" />
 }
 
+@*@Ajax.ActionLink("Latest Score Please","Latest Score", "LiveScores", new AjaxOptions(){ OnComplete = "alert('Boo')" }
+*@
+<div id="resultsHolder">
+    @Html.Partial("_ArticleList", Model)
+</div>

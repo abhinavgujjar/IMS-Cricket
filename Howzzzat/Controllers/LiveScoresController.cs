@@ -2,8 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Mvc.Async;
 
 namespace Howzzzat.Controllers
 {
@@ -12,20 +15,82 @@ namespace Howzzzat.Controllers
         //
         // GET: /LiveScors/
 
-        
         public ActionResult Index()
         {
+           
             var scores = new List<Howzzzat.Models.LiveScore>()
                 {
-                    new LiveScore { MatchName = "Ind vs Pak", CurrentScore = "234/5"},
-                    new LiveScore { MatchName = "Aus vs Eng", CurrentScore = "111/6"},
-                    new LiveScore { MatchName = "NZ vs Zim", CurrentScore = "32/8"}
+                    new LiveScore { MatchName = "Ind vs Pak", 
+                        CurrentScore = "234/5" + " " +  DateTime.Now
+                    },
+                    new LiveScore { MatchName = "Aus vs Eng", 
+                        CurrentScore = "111/6" + " " + DateTime.Now
+                    },
+                    new LiveScore { MatchName = "NZ vs Zim", 
+                        CurrentScore = "32/8" + " " +  DateTime.Now}
                 };
-
-           
 
             return PartialView(scores);
         }
+
+        public async Task<ActionResult> IndexSlow()
+        {
+            var data1 = "dummy1";
+            var data2 = " dummy2";
+
+            LiveScoreWrapper wrapper = new LiveScoreWrapper();
+
+            ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+
+            var threadId = System.Threading.Thread.CurrentThread.ManagedThreadId;
+
+            wrapper.Messages.Add("Started controller executiiong on thread:  " + threadId);
+
+            //data1 = await client.GetDataAsync(99);
+
+            data1 = await slowMethod();
+
+            data2 = await slowMethod2(data1);
+
+            wrapper.Messages.Add("Recievede data on thread: " + System.Threading.Thread.CurrentThread.ManagedThreadId);
+
+            var scores = new List<Howzzzat.Models.LiveScore>()
+                {
+                    new LiveScore { MatchName = "Ind vs Pak", 
+                        CurrentScore = "234/5" + " " +  DateTime.Now, 
+                        ExternalData = data1 + data2
+                    },
+                    new LiveScore { MatchName = "Aus vs Eng", 
+                        CurrentScore = "111/6" + " " + DateTime.Now,
+                    ExternalData = data1 + data2
+                    },
+                    new LiveScore { MatchName = "NZ vs Zim", 
+                        CurrentScore = "32/8" + " " +  DateTime.Now,
+                    ExternalData = data1 + data2}
+                };
+
+            wrapper.Messages.Add("finished execution on thread: " + System.Threading.Thread.CurrentThread.ManagedThreadId);
+
+            wrapper.Scores = scores;
+
+            return PartialView(wrapper);
+        }
+
+
+        private async Task<string> slowMethod()
+        {
+            await Task.Delay(4000);
+
+            return "Some delsayed string";
+        }
+
+        private async Task<string> slowMethod2(string input)
+        {
+            await Task.Delay(4000);
+
+            return "Some other delsayed string";
+        }
+
 
         //
         // GET: /LiveScors/Details/5

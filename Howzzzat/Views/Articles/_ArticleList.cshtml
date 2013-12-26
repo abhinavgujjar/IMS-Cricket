@@ -1,0 +1,6 @@
+﻿@model IEnumerable<Howzzzat.Models.Article>
+
+
+@foreach (var item in Model) {
+    @Html.Partial("_ArticleSummary", item)
+}
